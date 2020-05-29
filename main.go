@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func main() {
 	// n5 := ListNode{Val: 5, Next: nil}
 	//n4 := ListNode{Val: 4, Next: nil}
