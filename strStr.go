@@ -1,7 +1,7 @@
 package main
 
 func strStr(haystack string, needle string) int {
-	if haystack == "" && needle == "" {
+	if haystack == needle {
 		return 0
 	}
 	result := -1

@@ -4,12 +4,13 @@ func removeDuplicates(nums []int) int {
 	if len(nums) <= 1 {
 		return len(nums)
 	}
-	lIndex := 0
-	for index := 1; index < len(nums); index++ {
-		if nums[index-1] != nums[index] {
-			nums[lIndex+1] = nums[index]
-			lIndex += 1
+	index := 1
+	for i := 1; i < len(nums); i++ {
+		if nums[i] == nums[i-1] {
+			continue
 		}
+		nums[index] = nums[i]
+		index++
 	}
-	return lIndex + 1
+	return index
 }

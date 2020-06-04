@@ -1,15 +1,16 @@
 package main
 
 func removeElement(nums []int, val int) int {
-	lIndex := 0
-	for index, n := range nums {
-		if n != val {
-			tmp := nums[lIndex]
-			nums[lIndex] = n
-			nums[index] = tmp
-			lIndex += 1
+	if len(nums) == 0 {
+		return 0
+	}
+	index := 0
+	for i := 0; i < len(nums); i++ {
+		if nums[i] != val {
+			nums[index] = nums[i]
+			index++
 		}
 
 	}
-	return lIndex
+	return index
 }

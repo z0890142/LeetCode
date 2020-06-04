@@ -2,19 +2,20 @@ package main
 
 func generateParenthesis(n int) []string {
 	var result []string
-	ln, rn := n, n
-	Parenthesis(ln, rn, "", &result)
+	rn, ln := n, n
+	createParenthesis(rn, ln, "", &result)
 	return result
 }
 
-func Parenthesis(left int, right int, text string, result *[]string) {
-	if right < 0 || left < 0 || left > right {
+func createParenthesis(rn int, ln int, preText string, result *[]string) {
+	if ln == 0 && rn == 0 {
+		*result = append(*result, preText)
+	}
+	if ln < rn || ln < 0 || rn < 0 {
 		return
 	}
-	if right == 0 && left == 0 {
-		*result = append(*result, text)
-	}
-	Parenthesis(left, right-1, text+")", result)
-	Parenthesis(left-1, right, text+"(", result)
+
+	createParenthesis(rn-1, ln, preText+"(", result)
+	createParenthesis(rn, ln-1, preText+")", result)
 
 }
