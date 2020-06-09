@@ -19,7 +19,6 @@ func Test_letterCombinations(t *testing.T) {
 
 	for _, testItem := range tests {
 		assert.Equal(t, testItem.result, letterCombinations(testItem.digits))
-
 	}
 
 }
