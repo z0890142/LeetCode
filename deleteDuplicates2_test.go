@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var deleteDuplicatesListstest1 = ListNode{
+var deleteDuplicates2Liststest1 = ListNode{
 	Val: 1,
 	Next: &ListNode{
 		Val: 2,
@@ -25,7 +25,7 @@ var deleteDuplicatesListstest1 = ListNode{
 		},
 	},
 }
-var deleteDuplicatesListstest2 = ListNode{
+var deleteDuplicates2Liststest2 = ListNode{
 	Val: 1,
 	Next: &ListNode{
 		Val: 2,
@@ -36,7 +36,7 @@ var deleteDuplicatesListstest2 = ListNode{
 	},
 }
 
-var deleteDuplicatesListstest3 = ListNode{
+var deleteDuplicates2Liststest3 = ListNode{
 	Val: 1,
 	Next: &ListNode{
 		Val: 1,
@@ -53,24 +53,24 @@ var deleteDuplicatesListstest3 = ListNode{
 	},
 }
 
-func Test_deleteDuplicates(t *testing.T) {
+func Test_deleteDuplicates2(t *testing.T) {
 	tests := []struct {
 		head   *ListNode
 		result []int
 	}{
 		{
-			&deleteDuplicatesListstest1,
-			[]int{1, 2, 3, 4, 5},
+			&deleteDuplicates2Liststest1,
+			[]int{1, 2, 4, 5},
 		}, {
-			&deleteDuplicatesListstest2,
+			&deleteDuplicates2Liststest2,
 			[]int{1, 2, 3},
 		}, {
-			&deleteDuplicatesListstest3,
-			[]int{1, 2, 3},
+			&deleteDuplicates2Liststest3,
+			[]int{2, 3},
 		},
 	}
 	for _, testItem := range tests {
-		result := deleteDuplicates(testItem.head)
+		result := deleteDuplicates2(testItem.head)
 		resultList := []int{}
 		getNode(result, &resultList)
 		assert.Equal(t, testItem.result, resultList)

@@ -6,18 +6,18 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var deleteDuplicatesListstest1 = ListNode{
+var partitionList1 = ListNode{
 	Val: 1,
 	Next: &ListNode{
-		Val: 2,
+		Val: 4,
 		Next: &ListNode{
 			Val: 3,
 			Next: &ListNode{
-				Val: 3,
+				Val: 2,
 				Next: &ListNode{
-					Val: 4,
+					Val: 5,
 					Next: &ListNode{
-						Val:  5,
+						Val:  2,
 						Next: nil,
 					},
 				},
@@ -25,7 +25,7 @@ var deleteDuplicatesListstest1 = ListNode{
 		},
 	},
 }
-var deleteDuplicatesListstest2 = ListNode{
+var partitionList2 = ListNode{
 	Val: 1,
 	Next: &ListNode{
 		Val: 2,
@@ -36,7 +36,7 @@ var deleteDuplicatesListstest2 = ListNode{
 	},
 }
 
-var deleteDuplicatesListstest3 = ListNode{
+var partitionList3 = ListNode{
 	Val: 1,
 	Next: &ListNode{
 		Val: 1,
@@ -53,24 +53,20 @@ var deleteDuplicatesListstest3 = ListNode{
 	},
 }
 
-func Test_deleteDuplicates(t *testing.T) {
+func Test_partition(t *testing.T) {
 	tests := []struct {
 		head   *ListNode
+		x      int
 		result []int
 	}{
 		{
-			&deleteDuplicatesListstest1,
-			[]int{1, 2, 3, 4, 5},
-		}, {
-			&deleteDuplicatesListstest2,
-			[]int{1, 2, 3},
-		}, {
-			&deleteDuplicatesListstest3,
-			[]int{1, 2, 3},
+			&partitionList1,
+			3,
+			[]int{1, 2, 2, 4, 3, 5},
 		},
 	}
 	for _, testItem := range tests {
-		result := deleteDuplicates(testItem.head)
+		result := partition(testItem.head, testItem.x)
 		resultList := []int{}
 		getNode(result, &resultList)
 		assert.Equal(t, testItem.result, resultList)
