@@ -1,20 +1,24 @@
 package main
 
-import "strconv"
+import "fmt"
 
 func grayCode(n int) []int {
-	var result []int
-	grayCodeHelper("", n, &result)
-	return result
-}
-
-func grayCodeHelper(text string, n int, result *[]int) {
-	if len(text) == n {
-		tmp, _ := strconv.ParseInt(text, 2, 64)
-		*result = append(*result, int(tmp))
-		return
+	if n < 0 {
+		return nil
 	}
-	grayCodeHelper(text+"0", n, result)
-	grayCodeHelper(text+"1", n, result)
+
+	res := []int{0}
+	if n == 0 {
+		return res
+	}
+
+	for i := 0; i < n; i++ {
+		for j := len(res) - 1; j >= 0; j-- {
+			fmt.Println((1 << uint(3)))
+			res = append(res, res[j]|(1<<uint(i)))
+		}
+	}
+
+	return res
 
 }
