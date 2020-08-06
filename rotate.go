@@ -5,18 +5,13 @@ import "fmt"
 func rotate(matrix [][]int) {
 
 	for row := 0; row < (len(matrix) - 1); row++ {
-		maxCol := len(matrix) - row - 1
+		maxCol := len(matrix[row]) - row - 1
 		for col := 0; col < maxCol; col++ {
-			tmp := matrix[row][col]
-			matrix[row][col] = matrix[len(matrix)-1-col][maxCol]
-			matrix[len(matrix)-1-col][maxCol] = tmp
+			matrix[row][col], matrix[len(matrix)-col-1][maxCol] = matrix[len(matrix)-col-1][maxCol], matrix[row][col]
 		}
 	}
-	//上下交換
 	for row := 0; row < len(matrix)/2; row++ {
-		tmpRow := matrix[row]
-		matrix[row] = matrix[len(matrix)-1-row]
-		matrix[len(matrix)-1-row] = tmpRow
+		matrix[row], matrix[len(matrix)-row-1] = matrix[len(matrix)-row-1], matrix[row]
 	}
 }
 

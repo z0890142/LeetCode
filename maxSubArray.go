@@ -1,20 +1,18 @@
 package main
 
-import "math"
-
 func maxSubArray(nums []int) int {
-	var result int
-	result = math.MinInt64
-	sum := 0
-	for _, n := range nums {
-		if sum < 0 {
-			sum = n
+	dp := make([]int, len(nums))
+	max := nums[0]
+	dp[0] = nums[0]
+	for index := 1; index < len(nums); index++ {
+		if dp[index-1]+nums[index] < nums[index] {
+			dp[index] = nums[index]
 		} else {
-			sum += n
+			dp[index] = dp[index-1] + nums[index]
 		}
-		if sum > result {
-			result = sum
+		if dp[index] > max {
+			max = dp[index]
 		}
 	}
-	return result
+	return max
 }
