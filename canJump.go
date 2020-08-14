@@ -1,13 +1,13 @@
 package main
 
 func canJump(nums []int) bool {
-	maxStep := 0
-	for i := 0; i < len(nums); i++ {
-		if i > maxStep {
+	maxStep := nums[0]
+	for index := 1; index < len(nums); index++ {
+		if index > maxStep {
 			return false
 		}
-		if i+nums[i] > maxStep {
-			maxStep = i + nums[i]
+		if nums[index]+index > maxStep {
+			maxStep = nums[index] + index
 		}
 	}
 	return true

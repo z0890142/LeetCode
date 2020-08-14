@@ -2,34 +2,35 @@ package main
 
 func generateMatrix(n int) [][]int {
 	var result [][]int
-	sum := 1
-	start, end := 0, n-1
+	if n == 0 {
+		return result
+	}
 	for time := 0; time < n; time++ {
 		tmp := make([]int, n)
 		result = append(result, tmp)
 	}
-	for start < end {
-		for count := start; count < end; count++ {
-			result[start][count] = sum
-			sum += 1
+	num := 1
+	for layout := 0; layout <= n/2; layout++ {
+		if layout == n/2 && n%2 != 0 {
+			result[layout][layout] = num
+			break
 		}
-		for count := start; count < end; count++ {
-			result[count][end] = sum
-			sum += 1
+		for i := layout; i < n-layout-1; i++ {
+			result[layout][i] = num
+			num++
 		}
-		for count := end; count > start; count-- {
-			result[end][count] = sum
-			sum += 1
+		for i := layout; i < n-layout-1; i++ {
+			result[i][n-layout-1] = num
+			num++
 		}
-		for count := end; count > start; count-- {
-			result[count][start] = sum
-			sum += 1
+		for i := n - layout - 1; i > layout; i-- {
+			result[n-layout-1][i] = num
+			num++
 		}
-		start += 1
-		end -= 1
-	}
-	if n%2 > 0 {
-		result[start][end] = sum
+		for i := n - layout - 1; i > layout; i-- {
+			result[i][layout] = num
+			num++
+		}
 	}
 	return result
 }
