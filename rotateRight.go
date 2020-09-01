@@ -6,27 +6,21 @@ func rotateRight(head *ListNode, k int) *ListNode {
 	}
 	countNode := head
 	firstNode := head
-
-	nums := 0
-	for true {
-		nums += 1
-		if countNode.Next == nil {
-			countNode.Next = firstNode
-			countNode = countNode.Next
-			break
-		}
+	num := 1
+	for countNode.Next != nil {
+		num++
 		countNode = countNode.Next
 	}
-	count := nums - (k % nums)
+	countNode.Next = firstNode
+	countNode = countNode.Next
 
-	for count >= 1 {
-		if count == 1 {
-			firstNode = countNode.Next
-			countNode.Next = nil
-			break
-		}
+	num = num - (k % num)
+
+	for i := 1; i < num; i++ {
 		countNode = countNode.Next
-		count -= 1
 	}
+	firstNode = countNode.Next
+	countNode.Next = nil
+
 	return firstNode
 }

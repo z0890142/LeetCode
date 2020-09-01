@@ -1,46 +1,44 @@
 package main
 
-func addBinary(a string, b string) string {
+import (
+	"strconv"
+	"strings"
+)
 
+func addBinary(a string, b string) string {
+	var result []string
 	if len(b) > len(a) {
 		a, b = b, a
 	}
-	x, carry := []byte(a), uint8('0')
-	for index := 1; index <= len(x); index++ {
-		if index > len(b) {
-			if carry == '1' {
-				if x[len(x)-index] == '1' {
-					x[len(x)-index] = '0'
-				} else {
-					x[len(x)-index] = '1'
-					carry = '0'
-				}
-				continue
-			}
-			carry = '0'
-			break
-		}
-
-		if x[len(x)-index]+b[len(b)-index] == '1'*2 {
-			if carry == '1' {
-				continue
-			}
-			carry = '1'
-			x[len(x)-index] = '0'
-		} else if x[len(x)-index]+b[len(b)-index] == '0'*2 {
-			x[len(x)-index] = carry
-			carry = '0'
-		} else {
-			if carry == '1' {
-				x[len(x)-index] = '0'
+	carry := 0
+	for index := 1; index < len(a); index++ {
+		if len(b)-index >= 0 {
+			tmp := int(a[len(a)-index]) - 48 + int(b[len(b)-index]) - 48 + carry
+			if tmp == 3 {
+				result = append(result, "1")
+				carry = 1
+			} else if tmp == 2 {
+				result = append(result, "0")
+				carry = 1
 			} else {
-				x[len(x)-index] = '1'
+				carry = 0
+				v := strconv.Itoa(tmp)
+				result = append(result, v)
+			}
+		} else {
+			tmp := int(a[len(a)-index]) - 48 + carry
+			if tmp == 2 {
+				result = append(result, "0")
+				carry = 1
+			} else {
+				carry = 0
+				v := strconv.Itoa(tmp)
+				result = append(result, v)
 			}
 		}
-
 	}
-	if carry > '0' {
-		x = append([]byte{carry}, x...)
+	if carry == 1 {
+		result = append(result, "1")
 	}
-	return string(x)
+	return strings.Join(result, "")
 }

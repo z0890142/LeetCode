@@ -5,7 +5,7 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	col := len(obstacleGrid[0])
 	var result [][]int
 
-	for rowIndex := 0; rowIndex < row; rowIndex++ {
+	for mIndex := 0; mIndex < row; mIndex++ {
 		tmp := make([]int, col)
 		result = append(result, tmp)
 	}

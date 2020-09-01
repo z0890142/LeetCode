@@ -6,14 +6,17 @@ func uniquePaths(m int, n int) int {
 		tmp := make([]int, n)
 		result = append(result, tmp)
 	}
-	for mIndex := 0; mIndex < m; mIndex++ {
-		for nIndex := 0; nIndex < n; nIndex++ {
-			if mIndex == 0 || nIndex == 0 {
-				result[mIndex][nIndex] = 1
-			} else {
-				result[mIndex][nIndex] = result[mIndex-1][nIndex] + result[mIndex][nIndex-1]
-			}
+	for i := 0; i < m; i++ {
+		result[i][0] = 1
+	}
+	for i := 0; i < n; i++ {
+		result[0][i] = 1
+	}
+	for row := 1; row < m; row++ {
+		for col := 1; col < n; col++ {
+			result[row][col] = result[row-1][col] + result[row][col-1]
 		}
 	}
+
 	return result[m-1][n-1]
 }
