@@ -1,42 +1,35 @@
 package main
 
 func partition2(s string) [][]string {
-
 	var result [][]string
-
-	for startIndex := 0; startIndex < len(s); startIndex++ {
-		var tmp []string
-		isPalindrome, endIndex := partition2Helper(startIndex, s)
-		if !isPalindrome {
-			tmp = append(tmp, s[startIndex:startIndex+1])
-			continue
-		}
-		tmp = append(tmp, s[startIndex:endIndex+1])
-		endIndex++
-		for endIndex < len(s) {
-			tmp = append(tmp, s[endIndex:endIndex+1])
-			endIndex++
-		}
-		result = append(result, tmp)
+	if len(s) == 0 {
+		return result
 	}
-	return result
+	return partition2Helper(s, []string{}, result)
 }
 
-func partition2Helper(startIndex int, s string) (isPalindrome bool, end int) {
-
-	for endPoint := len(s) - 1; endPoint > startIndex; endPoint-- {
-		isPalindrome = true
-		for endIndex := endPoint; endPoint > startIndex; endIndex-- {
-			if s[startIndex] != s[endIndex] {
-				isPalindrome = false
-				break
-			}
-			startIndex++
-		}
-		if isPalindrome {
-			return isPalindrome, endPoint
+func isPal(s string) bool {
+	for i := 0; i < len(s)/2; i++ {
+		if s[i] != s[len(s)-1-i] {
+			return false
 		}
 	}
+	return true
 
-	return false, 0
+}
+
+func partition2Helper(s string, tmp []string, result [][]string) [][]string {
+	if len(s) == 0 {
+		clone := make([]string, len(tmp))
+		copy(clone, tmp)
+		return append(result, clone)
+	}
+	for index := 1; index <= len(s); index++ {
+		sub_s := s[:index]
+		if isPal(sub_s) {
+			tmp = append(tmp, sub_s)
+			result = partition2Helper(s[index:], tmp, result)
+		}
+	}
+	return result
 }
