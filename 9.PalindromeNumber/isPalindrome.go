@@ -1,4 +1,4 @@
-package main
+package PalindromeNumber
 
 var diff byte = 'a' - 'A'
 

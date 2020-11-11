@@ -1,4 +1,4 @@
-package main
+package ContainerWithMostWater
 
 func maxArea(height []int) int {
 	leftIndex := 0
