@@ -1,35 +1,32 @@
-package main
+package CloneGraph
 
-type CNode struct {
+type Node struct {
 	Val       int
-	Neighbors []*CNode
+	Neighbors []*Node
 }
 
-///DFS
-// func cloneGraph(node *CNode) *CNode {
+func cloneGraph(node *Node) *Node {
+	visited := make(map[int]*Node)
+	return cloneGraphHelper(node, visited)
+}
 
-// 	visited := make(map[int]*CNode)
-// 	return cloneGraphHelper(node, visited)
-// }
+func cloneGraphHelper(node *Node, visited map[int]*Node) *Node {
 
-// func cloneGraphHelper(node *CNode, visited map[int]*CNode) *CNode {
+	if node == nil {
+		return nil
+	}
 
-// 	if node == nil {
-// 		return nil
-// 	}
+	if v, ok := visited[node.Val]; ok {
+		return v
+	}
+	visited[node.Val] = &Node{Val: node.Val}
 
-// 	if v, ok := visited[node.Val]; ok {
-// 		return v
-// 	}
-// 	newNode := &CNode{Val: node.Val}
-// 	visited[node.Val] = newNode
+	for _, n := range node.Neighbors {
+		visited[node.Val].Neighbors = append(visited[node.Val].Neighbors, cloneGraphHelper(n, visited))
+	}
 
-// 	for _, n := range node.Neighbors {
-// 		newNode.Neighbors = append(newNode.Neighbors, cloneGraphHelper(n, visited))
-// 	}
-
-// 	return newNode
-// }
+	return visited[node.Val]
+}
 
 // BFS Go/Golang
 // func cloneGraph(node *Node) *Node {
