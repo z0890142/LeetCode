@@ -19,16 +19,16 @@ func isPal(s string) bool {
 
 }
 
-func partitionHelper(s string, tmp []string, result [][]string) [][]string {
+func partitionHelper(s string, current []string, result [][]string) [][]string {
 	if len(s) == 0 {
-		clone := make([]string, len(tmp))
-		copy(clone, tmp)
+		clone := make([]string, len(current))
+		copy(clone, current)
 		return append(result, clone)
 	}
 	for index := 1; index <= len(s); index++ {
 		sub_s := s[:index]
 		if isPal(sub_s) {
-			tmp = append(tmp, sub_s)
+			tmp := append(current, string(sub_s))
 			result = partitionHelper(s[index:], tmp, result)
 		}
 	}
