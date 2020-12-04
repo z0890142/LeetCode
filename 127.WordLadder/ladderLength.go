@@ -1,9 +1,11 @@
-package main
+package WordLadder
 
 import "container/list"
 
 func ladderLength(beginWord string, endWord string, wordList []string) int {
+	var result int
 	wordMap := make(map[string]struct{})
+
 	for _, v := range wordList {
 		wordMap[v] = struct{}{}
 	}
@@ -15,10 +17,6 @@ func ladderLength(beginWord string, endWord string, wordList []string) int {
 	queue := list.New()
 	queue.PushBack(beginWord)
 	delete(wordMap, beginWord)
-
-	result := 1
-	list := []string{}
-	list = append(list, beginWord)
 
 	for queue.Len() != 0 {
 		l := queue.Len()
