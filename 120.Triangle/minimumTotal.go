@@ -1,4 +1,4 @@
-package main
+package Triangle
 
 import "sort"
 
@@ -19,10 +19,10 @@ func minimumTotal(triangle [][]int) int {
 	return triangle[maxRow][0]
 }
 
-func min(num1 int, num2 int) int {
-	if num1 > num2 {
-		return num2
-	} else {
-		return num1
+func min(a int, b int) int {
+	if a > b {
+		return b
+
 	}
+	return a
 }
