@@ -1,4 +1,4 @@
-package main
+package PascalsTriangleII
 
 func getRow(rowIndex int) []int {
 	result := make([]int, rowIndex+1)

@@ -1,4 +1,4 @@
-package main
+package PascalsTriangle
 
 func generate(numRows int) [][]int {
 	var result [][]int

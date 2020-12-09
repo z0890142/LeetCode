@@ -1,4 +1,4 @@
-package main
+package PascalsTriangle
 
 import (
 	"testing"
@@ -11,15 +11,12 @@ func Test_generate(t *testing.T) {
 		numRows int
 		result  [][]int
 	}{
-
 		{
-			5,
+			3,
 			[][]int{
 				[]int{1},
 				[]int{1, 1},
 				[]int{1, 2, 1},
-				[]int{1, 3, 3, 1},
-				[]int{1, 4, 6, 4, 1},
 			},
 		},
 	}
@@ -28,5 +25,4 @@ func Test_generate(t *testing.T) {
 		assert.Equal(t, testItem.result, generate(testItem.numRows))
 
 	}
-
 }

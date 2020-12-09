@@ -1,4 +1,4 @@
-package main
+package PascalsTriangleII
 
 import (
 	"testing"
@@ -12,8 +12,8 @@ func Test_getRow(t *testing.T) {
 		result   []int
 	}{
 		{
-			2,
-			[]int{1, 2, 2},
+			3,
+			[]int{1, 2, 1},
 		},
 	}
 
