@@ -1,4 +1,4 @@
-package main
+package PopulatingNextRightPointersinEachNodeII
 
 type Node struct {
 	Val   int
