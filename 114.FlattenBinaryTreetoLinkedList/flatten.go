@@ -1,4 +1,10 @@
-package main
+package FlattenBinaryTreetoLinkedList
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
 func flatten(root *TreeNode) {
 	if root == nil {
@@ -24,13 +30,17 @@ func flatten(root *TreeNode) {
 	}
 }
 
+// DFS
 // func flatten(root *TreeNode) {
 // 	if root == nil {
-//         return
-//     }
+// 		return
+// 	}
 // 	flattenHelper(root)
+// 	fmt.Println(root)
 // }
+
 // func flattenHelper(root *TreeNode) *TreeNode {
+
 // 	if root == nil {
 // 		return nil
 // 	}
@@ -40,7 +50,6 @@ func flatten(root *TreeNode) {
 
 // 	left := flattenHelper(root.Left)
 // 	right := flattenHelper(root.Right)
-
 // 	if left != nil {
 // 		root.Right = left
 // 		for left.Right != nil {
@@ -51,6 +60,5 @@ func flatten(root *TreeNode) {
 // 	} else {
 // 		root.Right = right
 // 	}
-
 // 	return root
 // }

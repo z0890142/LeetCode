@@ -1,4 +1,4 @@
-package main
+package PathSumII
 
 import (
 	"testing"
@@ -13,12 +13,8 @@ var pathSumResult2 = TreeNode{
 		&TreeNode{
 			11,
 			&TreeNode{
-				1,
-				&TreeNode{
-					1,
-					nil,
-					nil,
-				},
+				7,
+				nil,
 				nil,
 			},
 			&TreeNode{
