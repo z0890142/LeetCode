@@ -1,4 +1,10 @@
-package main
+package BinaryTreeLevelOrderTraversalII
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
 func levelOrderBottom(root *TreeNode) [][]int {
 	rs := make([][]int, 0)
@@ -11,10 +17,8 @@ func levelOrderBottom(root *TreeNode) [][]int {
 	for len(queue) > 0 {
 		var line []int
 		var kids []*TreeNode
-
 		for _, node := range queue {
 			line = append(line, node.Val)
-
 			if node.Left != nil {
 				kids = append(kids, node.Left)
 			}
