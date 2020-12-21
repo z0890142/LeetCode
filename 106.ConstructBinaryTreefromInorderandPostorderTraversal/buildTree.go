@@ -1,6 +1,11 @@
-package main
+package ConstructBinaryTreefromInorderandPostorderTraversal
 
-//Construct Binary Tree from Preorder and Inorder Traversal
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 func buildTree(inorder []int, postorder []int) *TreeNode {
 	if len(postorder) == 0 || len(inorder) == 0 {
 		return nil
