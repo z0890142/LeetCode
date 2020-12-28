@@ -1,4 +1,10 @@
-package main
+package BinaryTreeZigzagLevelOrderTraversal
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
 func zigzagLevelOrder(root *TreeNode) [][]int {
 	result := make([][]int, 0)
