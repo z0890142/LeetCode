@@ -12,8 +12,11 @@ func Test_isPalindrome(t *testing.T) {
 		result bool
 	}{
 		{
-			"a:{+_)a}",
+			"-121",
 			true,
+		}, {
+			"112",
+			false,
 		},
 	}
 

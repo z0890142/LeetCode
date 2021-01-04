@@ -1,6 +1,12 @@
-package main
+package UniqueBinarySearchTreesII
 
 import "fmt"
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
 
 func generateTrees(n int) []*TreeNode {
 	if n == 0 {
@@ -22,7 +28,6 @@ func generateTreesHelper(min int, max int) (result []*TreeNode) {
 	if min > max {
 		return []*TreeNode{nil}
 	}
-
 	for i := min; i <= max; i++ {
 		leftSubTree := generateTreesHelper(min, i-1)
 		rightSubTree := generateTreesHelper(i+1, max)
