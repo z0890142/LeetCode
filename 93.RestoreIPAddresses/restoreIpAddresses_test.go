@@ -1,4 +1,4 @@
-package main
+package RestoreIPAddresses
 
 import (
 	"testing"
@@ -17,7 +17,8 @@ func Test_restoreIpAddresses(t *testing.T) {
 				"255.255.11.135",
 				"255.255.111.35",
 			},
-		}, {
+		},
+		{
 			"0000",
 			[]string{
 				"0.0.0.0",
