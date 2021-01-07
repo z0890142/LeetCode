@@ -1,4 +1,4 @@
-package main
+package ReverseLinkedListII
 
 import (
 	"testing"
@@ -45,4 +45,15 @@ func Test_reverseBetween(t *testing.T) {
 
 	}
 
+}
+
+func getNode(node *ListNode, preList *[]int) {
+	if node == nil {
+		return
+	}
+	*preList = append(*preList, node.Val)
+	if node.Next == nil {
+		return
+	}
+	getNode(node.Next, preList)
 }
