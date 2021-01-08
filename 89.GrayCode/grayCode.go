@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package GrayCode
 
 func grayCode(n int) []int {
 	if n < 0 {
@@ -14,11 +12,9 @@ func grayCode(n int) []int {
 
 	for i := 0; i < n; i++ {
 		for j := len(res) - 1; j >= 0; j-- {
-			fmt.Println((1 << uint(3)))
 			res = append(res, res[j]|(1<<uint(i)))
 		}
 	}
 
 	return res
-
 }
