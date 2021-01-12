@@ -1,10 +1,15 @@
-package main
+package PartitionList
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
 
 func partition(head *ListNode, x int) *ListNode {
-	smallFirstNode := &ListNode{}
-	bigFirstNode := &ListNode{}
-	smallNode := smallFirstNode
-	bigNode := bigFirstNode
+	bigFirstHead := &ListNode{}
+	smallFirstHead := &ListNode{}
+	smallNode := smallFirstHead
+	bigNode := bigFirstHead
 
 	for head != nil {
 		if head.Val >= x {
@@ -17,7 +22,6 @@ func partition(head *ListNode, x int) *ListNode {
 		head = head.Next
 	}
 	bigNode.Next = nil
-	smallNode.Next = bigFirstNode.Next
-
-	return smallFirstNode.Next
+	smallNode.Next = bigFirstHead.Next
+	return smallFirstHead.Next
 }
