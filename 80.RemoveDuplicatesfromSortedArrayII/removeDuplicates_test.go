@@ -1,4 +1,4 @@
-package main
+package RemoveDuplicatesfromSortedArrayII
 
 import (
 	"testing"
@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_removeDuplicates2(t *testing.T) {
+func Test_removeDuplicates(t *testing.T) {
 	tests := []struct {
 		nums []int
 
@@ -31,7 +31,7 @@ func Test_removeDuplicates2(t *testing.T) {
 	}
 
 	for _, testItem := range tests {
-		assert.Equal(t, testItem.result, removeDuplicates2(testItem.nums))
+		assert.Equal(t, testItem.result, removeDuplicates(testItem.nums))
 
 	}
 }

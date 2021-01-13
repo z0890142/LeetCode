@@ -1,4 +1,4 @@
-package main
+package SearchinRotatedSortedArrayII
 
 func search(nums []int, target int) bool {
 	low, high := 0, len(nums)-1
