@@ -1,4 +1,4 @@
-package main
+package Combinations
 
 import (
 	"testing"
@@ -12,10 +12,15 @@ func Test_combine(t *testing.T) {
 		k      int
 		result [][]int
 	}{
+		// {
+		// 	4,
+		// 	2,
+		// 	[][]int{[]int{1, 2}, []int{1, 3}, []int{1, 4}, []int{2, 3}, []int{2, 4}, []int{3, 4}},
+		// },
 		{
+			5,
 			4,
-			2,
-			[][]int{[]int{1, 2}, []int{1, 3}, []int{1, 4}, []int{2, 3}, []int{2, 4}, []int{3, 4}},
+			[][]int{[]int{1, 2, 3, 4}, []int{1, 2, 3, 5}, []int{1, 2, 4, 5}, []int{1, 3, 4, 5}, []int{2, 3, 4, 5}},
 		},
 	}
 

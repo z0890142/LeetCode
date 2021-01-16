@@ -1,4 +1,4 @@
-package main
+package Subsets
 
 import (
 	"testing"

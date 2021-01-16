@@ -1,4 +1,4 @@
-package main
+package WordSearch
 
 import (
 	"testing"
@@ -12,7 +12,11 @@ func Test_test(t *testing.T) {
 		word   string
 		result bool
 	}{
-
+		{
+			[][]byte{[]byte{'C', 'A', 'A'}, []byte{'A', 'A', 'A'}, []byte{'B', 'C', 'D'}},
+			"AAB",
+			true,
+		},
 		{
 			[][]byte{
 				[]byte{'A', 'B', 'C', 'E'},

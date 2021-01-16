@@ -1,4 +1,4 @@
-package main
+package WordSearch
 
 func exist(board [][]byte, word string) bool {
 	for rIndex, r := range board {

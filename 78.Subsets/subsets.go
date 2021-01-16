@@ -1,9 +1,8 @@
-package main
+package Subsets
 
 func subsets(nums []int) [][]int {
 	var result [][]int
 	result = append(result, []int{})
-
 	subsetsHelper(nums, []int{}, &result)
 	return result
 }
