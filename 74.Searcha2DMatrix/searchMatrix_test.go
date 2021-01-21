@@ -1,4 +1,4 @@
-package main
+package Searcha2DMatrix
 
 import (
 	"testing"
@@ -8,21 +8,20 @@ import (
 
 func Test_searchMatrix(t *testing.T) {
 	tests := []struct {
-		matrix   [][]int
+		matrix [][]int
 		target int
 		result bool
 	}{
 		{
-			[][]int{[]int{1,       3,  5,  7},[]int{10, 11, 16, 20},[]int{23, 30, 34, 50}},
+			[][]int{[]int{1, 3, 5, 7}, []int{10, 11, 16, 20}, []int{23, 30, 34, 50}},
 			3,
 			true,
 		},
 		{
-			[][]int{[]int{1,   3,  5,  7},[]int{10, 11, 16, 20},[]int{23, 30, 34, 50}},
+			[][]int{[]int{1, 3, 5, 7}, []int{10, 11, 16, 20}, []int{23, 30, 34, 50}},
 			13,
 			false,
 		},
-
 	}
 
 	for _, testItem := range tests {
