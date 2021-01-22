@@ -1,4 +1,4 @@
-package main
+package Sqrt
 
 import (
 	"testing"
@@ -13,7 +13,7 @@ func Test_mySqrt(t *testing.T) {
 	}{
 		{
 			16,
-			2,
+			4,
 		},
 	}
 

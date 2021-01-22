@@ -1,4 +1,4 @@
-package main
+package AddBinary
 
 import (
 	"testing"
@@ -17,16 +17,16 @@ func Test_addBinary(t *testing.T) {
 			"110010",
 			"110110",
 		},
-		// {
-		// 	"11",
-		// 	"1",
-		// 	"100",
-		// },
-		// {
-		// 	"1010",
-		// 	"1011",
-		// 	"10101",
-		// },
+		{
+			"11",
+			"1",
+			"100",
+		},
+		{
+			"1010",
+			"1011",
+			"10101",
+		},
 	}
 
 	for _, testItem := range tests {

@@ -1,4 +1,4 @@
-package main
+package Sqrt
 
 func mySqrt(x int) int {
 	l, r := 0, x
