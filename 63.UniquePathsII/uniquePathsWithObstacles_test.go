@@ -13,22 +13,22 @@ func Test_uniquePathsWithObstacles(t *testing.T) {
 		result       int
 		Name         string
 	}{
-		// {
-		// 	[][]int{
-		// 		[]int{0, 0, 0},
-		// 		[]int{0, 1, 0},
-		// 		[]int{0, 0, 0},
-		// 	},
-		// 	2,
-		// 	"test 1",
-		// },
-		// {
-		// 	[][]int{
-		// 		[]int{1},
-		// 	},
-		// 	0,
-		// 	"test 2",
-		// },
+		{
+			[][]int{
+				[]int{0, 0, 0},
+				[]int{0, 1, 0},
+				[]int{0, 0, 0},
+			},
+			2,
+			"test 1",
+		},
+		{
+			[][]int{
+				[]int{1},
+			},
+			0,
+			"test 2",
+		},
 		{
 			[][]int{
 				[]int{0},
