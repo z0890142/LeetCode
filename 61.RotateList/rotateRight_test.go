@@ -1,4 +1,4 @@
-package main
+package RotateList
 
 import (
 	"testing"
@@ -58,4 +58,15 @@ func Test_rotateRight(t *testing.T) {
 		assert.Equal(t, testItem.result, resultList)
 
 	}
+}
+
+func getNode(node *ListNode, preList *[]int) {
+	if node == nil {
+		return
+	}
+	*preList = append(*preList, node.Val)
+	if node.Next == nil {
+		return
+	}
+	getNode(node.Next, preList)
 }
