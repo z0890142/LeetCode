@@ -6,7 +6,7 @@ type ListNode struct {
 }
 
 func rotateRight(head *ListNode, k int) *ListNode {
-	if head == nil || k == 0 {
+	if head == nil {
 		return head
 	}
 	countNode := head
@@ -19,14 +19,13 @@ func rotateRight(head *ListNode, k int) *ListNode {
 	countNode.Next = firstNode
 	countNode = countNode.Next
 
-	k = k % num
+	num = num - (k % num)
 
-	for k > 0 {
+	for i := 1; i < num; i++ {
 		countNode = countNode.Next
-		k--
 	}
-
 	firstNode = countNode.Next
 	countNode.Next = nil
+
 	return firstNode
 }
