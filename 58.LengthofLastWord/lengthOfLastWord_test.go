@@ -1,4 +1,4 @@
-package main
+package LengthofLastWord
 
 import (
 	"testing"
@@ -12,8 +12,13 @@ func Test_lengthOfLastWord(t *testing.T) {
 		result int
 	}{
 		{
-			"Hello World",
-			5,
+
+			"  ",
+			0,
+		},
+		{
+			"b   a    ",
+			1,
 		},
 		{
 			"H ",
