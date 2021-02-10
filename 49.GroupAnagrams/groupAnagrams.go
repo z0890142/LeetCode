@@ -1,4 +1,4 @@
-package main
+package GroupAnagrams
 
 func groupAnagrams(strs []string) [][]string {
 	anagrams := make(map[[26]byte]int)

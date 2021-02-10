@@ -1,4 +1,4 @@
-package main
+package MergeIntervals
 
 import "sort"
 
@@ -25,4 +25,16 @@ func merge(intervals [][]int) [][]int {
 	}
 
 	return result
+}
+func min(a int, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+func max(a int, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }

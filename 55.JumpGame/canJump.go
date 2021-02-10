@@ -1,4 +1,4 @@
-package main
+package JumpGame
 
 func canJump(nums []int) bool {
 	maxStep := nums[0]

@@ -1,4 +1,4 @@
-package main
+package SpiralMatrix
 
 func spiralOrder(matrix [][]int) []int {
 	var result []int
