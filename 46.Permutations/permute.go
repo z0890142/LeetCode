@@ -1,4 +1,4 @@
-package main
+package Permutations
 
 func permute(nums []int) [][]int {
 	var result [][]int
