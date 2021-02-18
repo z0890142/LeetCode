@@ -1,4 +1,4 @@
-package main
+package MultiplyStrings
 
 import (
 	"testing"
@@ -13,16 +13,16 @@ func Test_multiply(t *testing.T) {
 		num2   string
 		result string
 	}{
-		{
-			"0",
-			"0",
-			"0",
-		},
 		// {
-		// 	"123",
-		// 	"456",
-		// 	"56088",
+		// 	"0",
+		// 	"0",
+		// 	"0",
 		// },
+		{
+			"123",
+			"456",
+			"56088",
+		},
 	}
 
 	for _, testItem := range tests {
