@@ -1,4 +1,4 @@
-package main
+package CombinationSum
 
 import (
 	"testing"
@@ -12,14 +12,14 @@ func Test_combinationSum(t *testing.T) {
 		target     int
 		result     [][]int
 	}{
-		// {
-		// 	[]int{2, 3, 6, 7},
-		// 	7,
-		// 	[][]int{
-		// 		[]int{7},
-		// 		[]int{2, 2, 3},
-		// 	},
-		// },
+		{
+			[]int{2, 3, 6, 7},
+			7,
+			[][]int{
+				[]int{7},
+				[]int{2, 2, 3},
+			},
+		},
 		{
 			[]int{2, 3, 5},
 			8,
