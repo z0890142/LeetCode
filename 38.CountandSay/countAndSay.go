@@ -2,31 +2,30 @@ package CountandSay
 
 import (
 	"fmt"
-	"strconv"
 	"strings"
 )
 
-func countAndSay(n int) string {
-	if n == 1 {
-		return "1"
-	}
-	result := "1"
-	for index := 2; index <= n; index++ {
-		count := 1
-		tmp := ""
-		for index := 1; index < len(result); index++ {
-			if result[index] != result[index-1] {
-				tmp += strconv.Itoa(count) + result[index-1:index]
-				count = 1
-				continue
-			}
-			count++
-		}
-		tmp += strconv.Itoa(count) + result[len(result)-1:]
-		result = tmp
-	}
-	return result
-}
+// func countAndSay(n int) string {
+// 	if n == 1 {
+// 		return "1"
+// 	}
+// 	result := "1"
+// 	for index := 2; index <= n; index++ {
+// 		count := 1
+// 		tmp := ""
+// 		for index := 1; index < len(result); index++ {
+// 			if result[index] != result[index-1] {
+// 				tmp += strconv.Itoa(count) + result[index-1:index]
+// 				count = 1
+// 				continue
+// 			}
+// 			count++
+// 		}
+// 		tmp += strconv.Itoa(count) + result[len(result)-1:]
+// 		result = tmp
+// 	}
+// 	return result
+// }
 
 func countAndSay(n int) string {
 	if n == 1 {
