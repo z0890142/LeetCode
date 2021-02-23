@@ -1,4 +1,4 @@
-package main
+package NextPermutation
 
 func nextPermutation(nums []int) {
 	targetIndex := 0
