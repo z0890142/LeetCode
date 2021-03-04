@@ -1,8 +1,6 @@
-package main
+package threeSumClosest
 
-import (
-	"sort"
-)
+import "sort"
 
 func threeSumClosest(nums []int, target int) int {
 	var result int

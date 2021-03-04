@@ -20,28 +20,3 @@ func swapPairs(head *ListNode) *ListNode {
 
 	return nextNode
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
