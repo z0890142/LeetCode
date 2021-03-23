@@ -1,32 +1,14 @@
 package PalindromeNumber
 
-var diff byte = 'a' - 'A'
-
-func isPalindrome(s string) bool {
-	l := 0
-	r := len(s) - 1
-	for l < r {
-		if !isAlnum(s[l]) {
-			l++
-		} else if !isAlnum(s[r]) {
-			r--
-		} else if toLower(s[l]) != toLower(s[r]) {
-			return false
-		} else {
-			l++
-			r--
-		}
+func isPalindrome(x int) bool {
+	if x < 0 || (x%10 == 0 && x != 0) {
+		return false
 	}
-	return true
-}
-
-func isAlnum(a byte) bool {
-	return 'a' <= toLower(a) && toLower(a) <= 'z' || '0' <= a && a <= '9'
-}
-
-func toLower(a byte) byte {
-	if a >= 'A' && a <= 'Z' {
-		return a + diff
+	revertedNumber := 0
+	for x > revertedNumber {
+		revertedNumber = revertedNumber*10 + x%10
+		x = x / 10
 	}
-	return a
+
+	return x == revertedNumber || x == revertedNumber/10
 }
